@@ -1,0 +1,53 @@
+.about-page{
+    margin: 4rem auto;
+    width: 80%;
+
+    @media(min-width: map-get($breakpoint, tablet-small)){
+        width: 70%;
+    }
+    @media(min-width: map-get($breakpoint, desktop)){
+        width: 60%;
+    }
+    h2{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        border-bottom: 2px solid $accent-color;
+
+        @media(min-width: map-get($breakpoint, tablet-small)){
+            font-size: 2rem;
+
+        }
+        @media(min-width: map-get($breakpoint, desktop)){
+            font-size: 2.2rem;
+        }
+
+        .about-page-logo{
+
+            font-weight: map-get($font-weight, bold);
+            font-style: italic;
+    }
+    }
+    p{
+        margin: 0 auto;
+        margin-top: 2rem;
+        line-height: 1.5;
+        @media(min-width: map-get($breakpoint, tablet-small)){
+            font-size: 1rem;
+
+        }
+
+        @media(min-width: map-get($breakpoint, desktop)){
+            font-size: 1.6rem;
+        }
+    }
+    img{
+        display: block;
+        margin: 0 auto;
+        margin-top: 2rem;
+        width: 60%;
+        @media(min-width: map-get($breakpoint, tablet-small)){
+            width: 50%;
+        }
+    }
+}

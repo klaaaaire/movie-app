@@ -1,0 +1,50 @@
+// Favorites
+
+
+.favorites{
+    margin: 4rem auto;
+    // width: 80%;
+
+    // @media(min-width: map-get($breakpoint, tablet-small)){
+    //     width: 70%;
+    // }
+    // @media(min-width: map-get($breakpoint, desktop)){
+    //     width: 60%;
+    // }
+    h2{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        border-bottom: 2px solid $accent-color;
+        margin-bottom: 1rem;
+
+        @media(min-width: map-get($breakpoint, tablet-small)){
+            font-size: 2rem;
+
+        }
+        @media(min-width: map-get($breakpoint, desktop)){
+            font-size: 2.2rem;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $accent-color;
+        font-weight: map-get($font-weight, bold);
+
+        &:hover {
+            color: rgb(64, 192, 192);
+        }
+    }
+
+    .no-favorites {
+        margin-top: 2rem;
+        text-align: center;
+        padding: 0.3rem 1rem;
+        line-height: 1.5;
+    }
+    
+
+}

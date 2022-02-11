@@ -1,0 +1,25 @@
+// Main Style Import File
+
+// Utilities
+@import './variables';
+@import './mixins';
+
+// Resets
+@import './reset';
+
+// Components
+@import './body';
+@import './wrapper';
+@import './header';
+@import './banner';
+@import './nav-main';
+@import './nav-sort';
+@import './movies';
+@import './movie-card';
+@import './single-movie';
+@import './about';
+@import './favorites';
+@import './footer';
+
+// Back To Top Button
+@import './back-to-top';

@@ -1,0 +1,109 @@
+header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	background-color: black;
+	position: sticky;
+
+	h1 {
+		font-size: 2rem;
+		font-weight: map-get($font-weight, bold);
+		font-style: italic;
+		text-transform: uppercase;
+	}
+
+	a {
+		color: $font-color;
+		text-decoration: none;
+		padding-left: 1rem;
+		&:hover {
+			color: $accent-color;
+		}
+	}
+
+	@media (min-width: map-get($breakpoint, tablet-large)) {
+		ul {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+		}
+
+		a {
+			margin-right: 1rem;
+		}
+	}
+
+	img {
+		width: 40px;
+		padding: 0 0.5rem;
+
+		@media (min-width: map-get($breakpoint, desktop)) {
+			width: 45px;
+			padding-left: 0.5rem;
+		}
+	}
+}
+
+// Hamburger menu
+.site-navigation {
+	ul {
+		display: none;
+		padding-bottom: 1rem;
+		margin: 0;
+		position: absolute;
+		top: 4rem;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		background-color: black;
+		list-style: none;
+		text-align: center;
+	}
+
+	a {
+		display: block;
+		padding: 1rem;
+		font-size: 1rem;
+		text-decoration: none;
+		color: $font-color;
+	}
+}
+
+.site-navigation.toggled ul {
+	display: block;
+}
+
+.menu-toggle {
+	display: block;
+	background-color: transparent;
+	border: 0;
+	padding: 1rem;
+	fill: $font-color;
+}
+
+@media (min-width: map-get($breakpoint, desktop)) {
+	.menu-toggle {
+		display: none;
+	}
+
+	.site-navigation {
+		flex: 1 1 auto;
+	}
+
+	.site-navigation ul,
+	.site-navigation.toggled ul {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		top: 0;
+	}
+
+	.site-navigation a {
+		line-height: 4.5rem; /* Matches the height of the .site-header */
+		padding: 0 1rem;
+	}
+}

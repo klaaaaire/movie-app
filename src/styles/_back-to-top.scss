@@ -1,0 +1,23 @@
+// Back to top button
+
+.back-to-top-btn {
+	display: flex;
+	justify-content: flex-end;
+	padding-bottom: 1rem;
+	padding-right: 1rem;
+	position: sticky;
+	bottom: 0;
+	z-index: 40;
+}
+
+.back-to-top-content {
+	.arrow-up {
+		border: double rgb(64, 192, 192);
+		border-width: 0 10px 10px 0;
+		display: inline-block;
+		padding: 10px;
+		transform: rotate(-135deg);
+		-webkit-transform: rotate(-135deg);
+	}
+}
+

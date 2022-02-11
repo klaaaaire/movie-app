@@ -1,0 +1,43 @@
+// Mixins Component
+
+// Centering
+
+@mixin centering {
+	margin: {
+		left: auto;
+		right: auto;
+	}
+}
+
+
+// Flexing
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+}
+
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+
+// Grid Templates
+
+@mixin grid-tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.875rem;
+}
+
+@mixin grid-desktop {
+    padding: 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.125rem;
+}

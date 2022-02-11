@@ -1,0 +1,66 @@
+// Nav Sort
+
+.nav-sort {
+	padding: 1rem;
+
+	@media (min-width: 400px) {
+		padding: 1.5rem 1rem;
+	}
+
+	@media (min-width: map-get($breakpoint, mobile)) {
+		padding: 2rem 1rem;
+	}
+
+	@media (min-width: map-get($breakpoint, tablet-small)) {
+		padding: 2.5rem 1rem;
+	}
+
+	@media (min-width: map-get($breakpoint, tablet-large)) {
+		padding: 3rem 1rem;
+	}
+
+	@media (min-width: map-get($breakpoint, desktop)) {
+		padding: 3.5rem 1rem;
+	}
+
+	ul {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	a {
+		padding: 0.5rem;
+		display: block;
+		color: $font-color;
+		font-size: 0.75rem;
+		font-weight: map-get($font-weight, semibold);
+		text-decoration: none;
+
+		&:active,
+		&:hover {
+			color: $accent-color;
+			font-weight: map-get($font-weight, bold);
+			font-style: italic;
+		}
+
+		@media (min-width: 400px) {
+			font-size: 0.875rem;
+		}
+
+		@media (min-width: map-get($breakpoint, mobile)) {
+			font-size: 1rem;
+		}
+
+		@media (min-width: map-get($breakpoint, tablet-small)) {
+			font-size: 1.25rem;
+		}
+
+		@media (min-width: map-get($breakpoint, tablet-large)) {
+			font-size: 1.5rem;
+		}
+
+		@media (min-width: map-get($breakpoint, desktop)) {
+			font-size: 1.75rem;
+		}
+	}
+}

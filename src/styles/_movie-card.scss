@@ -1,0 +1,175 @@
+// Movie Card Component
+
+.movie-card {
+	position: relative;
+	margin: 0 1.5rem 1.5rem;
+
+	@media (min-width: map-get($breakpoint, desktop)) {
+		margin: 0 1rem 1.5rem;
+	}
+}
+
+.movie-poster {
+	display: block;
+
+	img {
+		width: 100%;
+		border-radius: $movie-card-radius;
+	}
+}
+
+.movie-info {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	border-radius: $movie-card-radius;
+	color: $font-color;
+
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+
+	h3,
+	p,
+	a,
+	div {
+		display: none;
+	}
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.75);
+
+		h3 {
+			display: block;
+			margin-bottom: 2rem;
+			padding: 0 2rem;
+			font-size: 1.5rem;
+			font-weight: map-get($font-weight, bold);
+
+			@media (min-width: map-get($breakpoint, mobile)) {
+				font-size: 1.75rem;
+			}
+
+			@media (min-width: map-get($breakpoint, tablet-small)) {
+				font-size: 1.5rem;
+			}
+
+			@media (min-width: map-get($breakpoint, tablet-large)) {
+				margin-bottom: 1.5rem;
+				font-size: 1.25rem;
+			}
+
+			@media (min-width: map-get($breakpoint, desktop)) {
+				margin-bottom: 1rem;
+				font-size: 1.125rem;
+			}
+		}
+
+		p {
+			display: block;
+			margin-bottom: 1.25rem;
+			font-size: 1rem;
+			padding: 0 2rem;
+
+			@media (min-width: map-get($breakpoint, mobile)) {
+				font-size: 1.25rem;
+			}
+
+			@media (min-width: map-get($breakpoint, tablet-small)) {
+				font-size: 1rem;
+			}
+
+			@media (min-width: map-get($breakpoint, tablet-large)) {
+				margin-bottom: 1rem;
+				font-size: 0.875rem;
+			}
+		}
+
+		// More Info button
+		a { 
+			display: block;
+			// width: 20%;
+			width: 75px;
+			margin: 0 0 1.5rem 2rem;
+			padding: 0.75rem 1.5rem;
+			background-color: $accent-color;
+			color: $font-color;
+			text-decoration: none;
+			border-radius: 50px;
+			box-shadow: 0px 3px 5px black;
+
+			@media (min-width: map-get($breakpoint, mobile)) {
+				margin-top: 0.5rem;
+			}
+
+			@media (min-width: map-get($breakpoint, tablet-large)) {
+				width: 70px;
+				padding: 0.5rem 1rem;
+				margin-top: 0;
+				margin-bottom: 1rem;
+				font-size: 0.875rem;
+			}
+		}
+
+		div {
+			display: block;
+		}
+
+		.add-favorite {
+			img{
+				padding: 0 0 0 2rem;
+				width: 40px;
+				// should we position to top right corner?
+
+				@media (min-width: map-get($breakpoint, tablet-large)) {
+					width: 30px;
+				}
+			}
+		}
+
+		.remove-favorite {
+			img{
+				padding: 0 0 0 2rem;
+				width: 40px;
+
+				@media (min-width: map-get($breakpoint, tablet-large)) {
+					width: 30px;
+				}
+			}
+		}
+
+		.overview {
+			display: -webkit-box;
+			-webkit-line-clamp: 3; /* number of lines to show */
+			-webkit-box-orient: vertical;
+			text-align: left;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+
+		.movie-rating {
+			padding-left: 2rem;
+			margin-bottom: 1.25rem;
+			display: flex;
+			align-items: center;
+
+			@media (min-width: map-get($breakpoint, tablet-large)) {
+				margin-bottom: 1rem;
+			}
+
+			img {
+				background-color: $font-color;
+				border-radius: 50%;
+				border: 3px solid black;
+				margin-right: 0.5rem;
+			}
+
+			p {
+				padding: 0;
+				margin: 0;
+			}
+		}
+	}
+}
