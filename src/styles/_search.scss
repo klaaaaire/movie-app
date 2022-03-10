@@ -1,0 +1,33 @@
+.search-page-container{
+    margin: 0 1.5rem 1.5rem;
+    .search-page-title{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        border-bottom: 2px solid $accent-color;
+    }
+    .search-input-box{
+        display: block;
+        padding: 1rem 2rem;
+        margin: 0 auto;
+        background-color: #4C4C4C;
+        border-radius: .5rem;
+        border: none;
+        font-size: 1rem;
+
+    }
+    .search-btn {
+        display: block;
+        margin: 1rem auto;
+        padding: 0.5rem 2rem;
+        border: none;
+        border-radius: 2rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        font-family: $main-font;
+        background-color: $accent-color;
+
+    }
+}

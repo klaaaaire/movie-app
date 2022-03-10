@@ -9,32 +9,42 @@ function PageSearch() {
 
 
     const [query, setQuery] = useState(null);
-    const [searchedTerm, setSearchedTerm] = useState(null);
     const [searching, setSearching] = useState(false);
     const [moviesResults, setMoviesResults] = useState(null);
 
     const searchMovies = async (e) => {
         e.preventDefault();
+
+        // find the input value and grab it 
         setQuery(e.target[0].value);
         console.log(query);
         console.log(typeof query);
+        setSearching(true);
 
-        // if user typed something into the input, 
-        // if(query == null ||){
-            setSearching(true);
-            // setSearchedTerm(e.target[0].value);
+        // if no value entered in the input box,
+        if(query == ''){
+            setMoviesResults(null);
+            setSearching(false);
+        } else {
             const searchTerm = e.target[0].value;
+
+            // put it in the api calling
             const res = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchTerm}`);
+    
+            // save it into a useState so can display
             setMoviesResults(res.data.results);
             console.log(res.data);
             console.log(moviesResults);
-        // } else {
-        // }
-      
 
-        
- 
-        // empty moviesResults at the end 
+        }
+
+    
+
+        // empty the useState variable at the end or when new terms searched
+
+
+        // what happens when nothing is entered in the input box? --> gives an error so we should run the code above when there is a value typed into the box
+
     }
 
    
@@ -44,8 +54,8 @@ function PageSearch() {
 
         // if there is results, show the list of movies
         // if there isnt any result, show the message "Movie Title" cannot be found.
-        <div>
-            <h1 className="search-page-title">Movie Search</h1>
+        <div className="search-page-container">
+            <h1 className="search-page-title">Search Movies</h1>
             <div className="search-form-container">
                 <form className="search-form" onSubmit={searchMovies}>
                     <input className="search-input-box" type="text" name="query" placeholder="Search movie titles here" />
