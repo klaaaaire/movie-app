@@ -9,24 +9,47 @@ import thumbdown from '../images/thumbdown.svg';
 
 function MovieCard({ movieObj }) {
 
-    const [fav, setFav] = useState(false)
+    const [fav, setFav] = useState(null);
     // if movie not found in localstorage in favorites page then push movie into it
     function addFav() {
-        let favourites = JSON.parse(localStorage.getItem("favMovies"));
-        if (favourites.find(m => m.title == movieObj.title) != null) {
-            const index = favourites.findIndex((movie) => movie.id == movieObj.id);
-            if ( index > -1) {
-                console.log("found")
-                favourites.splice(index, 1);
-                localStorage.setItem("favMovies", JSON.stringify(favourites));
+        // let favourites = JSON.parse(localStorage.getItem("favMovies"));
+        // if (favourites.find(m => m.title == movieObj.title) != null) {
+        //     const index = favourites.findIndex((movie) => movie.id == movieObj.id);
+        //     if ( index > -1) {
+        //         console.log("found")
+        //         favourites.splice(index, 1);
+        //         localStorage.setItem("favMovies", JSON.stringify(favourites));
+        //     }
+        // } else {
+        //     favourites.push(movieObj);
+        //     localStorage.setItem("favMovies", JSON.stringify(favourites))
+        // }
+
+        // setFav(JSON.parse(localStorage.getItem("favMovies")))
+        // console.log(JSON.parse(localStorage.getItem("favMovies")))
+
+
+        // CLAIRE TRYING
+        // using JSON.parse so that can access to and use the values from the favMovies
+        let fave = JSON.parse(localStorage.getItem("favMovies"));
+        if(fave.find(m => m.id == movieObj.id) != null ){
+            const findMovie = (movie) => movie.id == movieObj.id ;
+            const index = fave.findIndex(findMovie);
+            if(index > -1){
+                fave.splice(index, 1);
+                // storage.setItem(keyName, keyValue); ==> both has to be in strings
+                localStorage.setItem("favMovies", JSON.stringify(fave))
+                console.log("FOUND");
+                console.log(index);
             }
+
         } else {
-            favourites.push(movieObj);
-            localStorage.setItem("favMovies", JSON.stringify(favourites))
+            console.log("NOT FOUND");
+            fave.push(movieObj);
+            localStorage.setItem("favMovies", JSON.stringify(fave));
         }
 
-        setFav(JSON.parse(localStorage.getItem("favMovies")))
-        console.log(JSON.parse(localStorage.getItem("favMovies")))
+        setFav(JSON.parse(localStorage.getItem("favMovies")));
         
     }
 
@@ -74,7 +97,7 @@ function MovieCard({ movieObj }) {
                     <p>{(movieObj.vote_average)*10}%</p>
                 </div>
                 <p className="overview">{movieObj.overview}</p>
-                <Link to={`/movie/${movieObj.id}`}>More Info</Link>
+                <Link to={`/movie/${movieObj.id}/credits`}>More Info</Link>
                 <div>{heartIcon()}</div>
                 
             </div>

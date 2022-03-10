@@ -5,6 +5,7 @@ import Movies from '../components/Movies';
 import Banner from '../components/Banner';
 
 
+
 function PageHome({ sort }) {
 
     const [movieData1, setMovieData1] = useState(null);
@@ -57,6 +58,7 @@ function PageHome({ sort }) {
 
         fetchMovies();
     }, [sort, page]);
+
 
 
     // Banner

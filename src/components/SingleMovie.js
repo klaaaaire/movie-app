@@ -80,13 +80,17 @@ function SingleMovie({ movieObj }) {
                         </div>
                         
                         <div className="single-movie-rating">
-                            <img src={movieObj.vote_average>5.0? thumbup : thumbdown} alt="rate Icon" id="single-movie-rate-icon" />
+                            <img src={movieObj.vote_average > 5.0? thumbup : thumbdown} alt="rate Icon" id="single-movie-rate-icon" />
                             <span >{(movieObj.vote_average)*10}%</span>
                         </div>
                         <p id="single-movie-overview">{movieObj.overview}</p>
                         <div className="single-movie-watch-now-btn-container">
-                            <a href={`/movie/${movieObj.id}`} id="single-movie-watch-now-btn">Watch Now
-                        </a>
+                            <a href={`/movie/${movieObj.id}`} id="single-movie-watch-now-btn">Watch Now</a>
+                        </div>
+
+                        <div className="single-movie-casts">
+                            <h2>{movieObj.id}</h2>
+
 
                         </div>
                     

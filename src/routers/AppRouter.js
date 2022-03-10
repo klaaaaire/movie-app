@@ -5,6 +5,7 @@ import PageHome from '../pages/PageHome';
 import PageAbout from '../pages/PageAbout';
 import PageFavorites from '../pages/PageFavorites';
 import PageSingleMovie from '../pages/PageSingleMovie';
+import PageSearch from '../pages/PageSearch';
 import ScrollToTop from '../components/ScrollToTop';
 import BackToTopButton from '../components/BackToTop';
 
@@ -23,7 +24,8 @@ function AppRouter() {
               <Route path="/sort/upcoming"><PageHome sort='upcoming' /></Route>
               <Route path="/about"><PageAbout /></Route>
               <Route path="/favorites"><PageFavorites /></Route>
-              <Route path="/movie/:id"><PageSingleMovie /></Route>
+              <Route path="/search"><PageSearch /></Route>
+              <Route path="/movie/:id" children="/movie/:id/credits"><PageSingleMovie /></Route>
             </Switch>
           </main>
           <BackToTopButton />
