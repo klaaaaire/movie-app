@@ -51,9 +51,6 @@ function NavMain() {
                 <li>
                     <NavLink onClick={expandedFalse && toggledFalse} to="/favorites">Favorites</NavLink>
                 </li>
-                <li>
-                    <NavLink onClick={expandedFalse && toggledFalse} to="/search">Search</NavLink>
-                </li>
             </ul>
 
         </nav>

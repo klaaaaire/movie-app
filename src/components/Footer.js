@@ -2,7 +2,7 @@ const Footer = () => {
     return (
         
         <footer>
-            <p>&copy; 2021 Aaron Lee, Claire Kang, Tiffany Yiu, Timothy Park | For Educational Purposes Only</p>
+            <p>&copy; 2021 Aaron Lee, Claire Kang, and Tiffany Yiu | For Educational Purposes Only</p>
         </footer>
     )
 };

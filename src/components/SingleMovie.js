@@ -87,12 +87,6 @@ function SingleMovie({ movieObj }) {
                         <div className="single-movie-watch-now-btn-container">
                             <a href={`/movie/${movieObj.id}`} id="single-movie-watch-now-btn">Watch Now</a>
                         </div>
-
-                        <div className="single-movie-casts">
-                            <h2>{movieObj.id}</h2>
-
-
-                        </div>
                     
                     </div>
                 </div>
